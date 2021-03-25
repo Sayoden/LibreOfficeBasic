@@ -1,0 +1,75 @@
+REM  *****  BASIC  *****
+option explicit
+
+sub Main
+
+end sub
+
+function f1 (x as single) as single
+  dim resultat as single
+  if x<200 then
+  	resultat = 0
+  else
+  	resultat = 0.2 * x
+  endif
+  
+  f1 = resultat
+end function
+
+function f2 (x as single) as single
+  dim resultat as single
+  if x<100 then
+  	resultat = 0
+  else
+  	if x<200 then
+  		resultat = 0.4 * x
+  	else
+  		resultat = 0.1 * x
+  	endif
+  endif
+  f2 = resultat
+end function
+
+function f3 (n as integer) as single
+  dim resultat as single
+  dim i as integer
+  resultat = 0
+  for i=1 to n
+   resultat = (resultat+i)/i
+   i = i + 1
+ next i
+f3 = resultat
+end function
+
+
+function f4 (a as integer, b as integer) as boolean
+  dim resultat as boolean
+  dim i as integer
+  resultat = false
+  for i=1 to a
+  	if a*i > b then
+  	  resultat = true
+  	else
+  	  i = i + 1
+  	endif
+  next i
+  
+f4 = resultat
+end function
+
+function f5 (n as integer)
+  dim i as integer
+  for i=0 to 2*n
+  	Msgbox(i)
+  	i = i + 2
+  next i
+end function
+
+
+sub test
+'Msgbox(f1(10))
+'Msgbox(f2(10))
+'Msgbox(f3(10))
+'Msgbox(f4(10, 1000))
+'f5(10)
+end sub
